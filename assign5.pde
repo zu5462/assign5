@@ -27,9 +27,10 @@ void draw(){
     case GAME_START:
       background(0);
       textSize(20);
-      text("Press ENTER To Start",230,height/2);
-      text("BREAKOUT",280,height/2-40);
+      text("Press ENTER To Start",200,int(height/2));
+      text("BREAKOUT",200,int(height/2-40));
       break;
+      
     case GAME_RUN:
       background(0);
       ball.balliX();
@@ -45,15 +46,17 @@ void draw(){
       drawlife();
       checkState();
       break;
+      
       case GAME_LOSE:
       textSize(18);
       fill(255);
-      text("YOU ARE LOSE!!",250,height/2);
-      text("Press ENTER To Reset",230,height/2+30);
+      text("YOU ARE LOSE!!",200,int(height/2+50));
+      text("Press ENTER To Reset",200,int(height/2+80));
       break;
+      
     case GAME_WIN:
-      text("YOU ARE WIN!!",250,height/2);
-      text("Press ENTER To Reset",230,height/2+30);
+      text("YOU ARE WIN!!",200,int(height/2+50));
+      text("Press ENTER To Reset",200,int(height/2+80));
       break;
   }
 }
