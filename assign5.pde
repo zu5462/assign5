@@ -48,7 +48,6 @@ void draw(){
       break;
       
       case GAME_LOSE:
-      textSize(18);
       fill(255);
       text("YOU ARE LOSE!!",200,int(height/2+50));
       text("Press ENTER To Reset",200,int(height/2+80));
