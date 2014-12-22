@@ -1,0 +1,68 @@
+class Brick{
+  int thick;
+  int length;
+  int ix=70;
+  int iy=50;
+  int col;
+  int r;
+  int g;
+  int b;
+  int xspacing;
+  int yspacing;
+  boolean behit=false;
+  int x;
+  int y;
+  
+  void display(int i){
+    if(behit==false){
+    rectMode(CENTER);
+    fill(r,g,b);
+    noStroke();
+    rect(ix+xspacing*(i%col),iy+yspacing*(i/col),length,thick);
+    x=ix+xspacing*(i%col);
+    y=iy+yspacing*(i/col);
+    }
+  }
+  
+  void hitbrick(){
+  float top       =y-thick/2;
+  float bottom    =y+thick/2;
+  float left      =x-length/2;
+  float right     =x+length/2;
+  float rightdis  =dist(ball.x,ball.y,right,y);
+  float leftdis   =dist(ball.x,ball.y,left,y);  
+  float topdis    =dist(ball.x,ball.y,x,top);
+  float bottomdis =dist(ball.x,ball.y,x,bottom);
+  if(behit !=true){
+  if(ball.y<bottom   && ball.y>top 
+     && ball.x<right && ball.x>left){
+     removebrick();
+     hit++;
+     if((rightdis < topdis && rightdis < bottomdis && rightdis < leftdis)||
+        (leftdis < topdis  && leftdis  < bottomdis && leftdis  < rightdis)){
+        ball.Xspeed=-ball.Xspeed;
+        }else{
+        ball.Yspeed=-ball.Yspeed;
+        }
+      }
+    }
+  }
+  
+void removebrick(){
+  x=1000;
+  y=1000;
+  behit=true;
+}
+
+
+  Brick(int col,int r,int g, int b){
+    this.col=col;
+    thick=30;
+    length=30;
+    xspacing=15+length;
+    yspacing=15+thick;
+    this.r=r;
+    this.g=g;
+    this.b=b;
+  }
+}
