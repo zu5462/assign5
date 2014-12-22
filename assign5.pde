@@ -44,7 +44,6 @@ void draw(){
       }
       drawlife();
       checkState();
-      println(hit);
       break;
       case GAME_LOSE:
       textSize(18);
