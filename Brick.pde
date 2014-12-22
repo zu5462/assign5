@@ -18,9 +18,9 @@ class Brick{
     rectMode(CENTER);
     fill(r,g,b);
     noStroke();
-    rect(ix+xspacing*(i%col),iy+yspacing*(i/col),length,thick);
-    x=ix+xspacing*(i%col);
-    y=iy+yspacing*(i/col);
+    rect(int(ix+xspacing*(i%col)),int(iy+yspacing*(i/col)),length,thick);
+    x=int(ix+xspacing*(i%col));
+    y=int(iy+yspacing*(i/col));
     }
   }
   
