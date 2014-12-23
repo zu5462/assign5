@@ -55,7 +55,7 @@ void draw(){
     case GAME_RUN:
       background(0);
       ball.balliX();
-      ball.mousemove();
+      ball.move();
       ball.display();
       ball.bounce();
       mybar.display();
