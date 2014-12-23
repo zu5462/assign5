@@ -10,6 +10,7 @@ class Brick{
   int xspacing;
   int yspacing;
   boolean behit=false;
+  boolean spbehit=false;
   int x;
   int y;
   
@@ -18,9 +19,9 @@ class Brick{
     rectMode(CENTER);
     fill(r,g,b);
     noStroke();
-    rect(int(ix+xspacing*(i%col)),int(iy+yspacing*(i/col)),length,thick);
-    x=int(ix+xspacing*(i%col));
-    y=int(iy+yspacing*(i/col));
+    rect(ix+xspacing*(int(i%col)),iy+yspacing*(int(i/col)),length,thick);
+    x=ix+xspacing*(int(i%col));
+    y=iy+yspacing*(int(i/col));
     }
   }
   
@@ -43,23 +44,15 @@ void hitbrick(){
         ball.Xspeed=-ball.Xspeed;
         }else{
         ball.Yspeed=-ball.Yspeed;
-        }
-          if(bricks[b1].behit==true
-          || bricks[b2].behit==true
-          || bricks[b3].behit==true){
-             mybar=new Bar(150);
-          }else if(bricks[r1].behit==true
-          || bricks[r2].behit==true
-          || bricks[r3].behit==true){
-               mybar=new Bar(50);
             }
+         }
       }
     }
-  }
+  
 
 void removebrick(){
-  x=1000;
-  y=1000;
+  x=3000;
+  y=3000;
   behit=true;
 }
 
