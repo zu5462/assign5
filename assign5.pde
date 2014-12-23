@@ -105,7 +105,7 @@ void keyPressed(){
 }
 
 void mouseClicked(){
-  if(mouseButton==LEFT && start==false && gameState==GAME_RUN){
+  if(mouseButton==RIGHT && start==false && gameState==GAME_RUN){
     start=true;
     ball.Xspeed=random(-4,4);
     ball.Yspeed=-6;
@@ -177,10 +177,10 @@ void checkState(){
 void reset(){
   start=false;
   ball=new Ball(10);
-  mybar=new Bar(100);
   if(gameState==GAME_LOSE || gameState==GAME_WIN){
     life=3;
     hit=0;
+    mybar=new Bar(100);
     b1=int(random(60));
     b2=int(random(60));
     b3=int(random(60));
