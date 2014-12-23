@@ -134,29 +134,30 @@ void hitred(){
 
 void barp(){
    if(bricks[b1].behit==true && bricks[b1].spbehit==false){
-    mybar=new Bar(150);
+    mybar.length=150;
     bricks[b1].spbehit=true;
   }else if(bricks[b2].behit==true && bricks[b2].spbehit==false){
-    mybar=new Bar(150);
-    bricks[r2].spbehit=true;
+    mybar.length=150;
+    bricks[b2].spbehit=true;
   }else if(bricks[b3].behit==true && bricks[b3].spbehit==false){
-    mybar=new Bar(150);
+    mybar.length=150;
     bricks[b3].spbehit=true;  
   }
 }
 
 void barm(){
   if(bricks[r1].behit==true && bricks[r1].spbehit==false){
-    mybar=new Bar(50);
+    mybar.length=50;
     bricks[r1].spbehit=true;
   }else if(bricks[r2].behit==true && bricks[r2].spbehit==false){
-    mybar=new Bar(50);
+    mybar.length=50;
     bricks[r2].spbehit=true;
   }else if(bricks[r3].behit==true && bricks[r3].spbehit==false){
-    mybar=new Bar(50);
-    bricks[r3].spbehit=true;  
+    mybar.length=50;
+    bricks[r3].spbehit=true;
   }
 }
+
 void drawlife(){
   textSize(20);
   text("LIFE:",10,height-30);
