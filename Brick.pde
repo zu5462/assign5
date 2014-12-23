@@ -13,7 +13,7 @@ class Brick{
   int x;
   int y;
   
-  void display(int i){
+ void display(int i,int col){
     if(behit==false){
     rectMode(CENTER);
     fill(r,g,b);
@@ -24,7 +24,7 @@ class Brick{
     }
   }
   
-  void hitbrick(){
+void hitbrick(){
   float top       =y-thick/2;
   float bottom    =y+thick/2;
   float left      =x-length/2;
@@ -44,10 +44,19 @@ class Brick{
         }else{
         ball.Yspeed=-ball.Yspeed;
         }
+          if(bricks[b1].behit==true
+          || bricks[b2].behit==true
+          || bricks[b3].behit==true){
+             mybar=new Bar(150);
+          }else if(bricks[r1].behit==true
+          || bricks[r2].behit==true
+          || bricks[r3].behit==true){
+               mybar=new Bar(50);
+            }
       }
     }
   }
-  
+
 void removebrick(){
   x=1000;
   y=1000;
@@ -55,8 +64,7 @@ void removebrick(){
 }
 
 
-  Brick(int col,int r,int g, int b){
-    this.col=col;
+Brick(int r,int g, int b){
     thick=30;
     length=30;
     xspacing=15+length;
