@@ -22,6 +22,7 @@ void move(){
 }
   
 Bar(float length){
+  x=mouseX;
   y=height-20;
   this.length=length;
   thick=10;
