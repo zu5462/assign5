@@ -9,7 +9,7 @@ void mousemove(){
   x=mouseX;
   y=mouseY;
 }
-void move(){  
+void move(){ 
   x+=Xspeed;
   y+=Yspeed;
   if( x<0 || x+size/2>=width){
@@ -23,6 +23,7 @@ void move(){
     reset();
     }
   }
+ 
  
 void display(){
   noStroke();
