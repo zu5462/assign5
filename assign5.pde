@@ -22,8 +22,9 @@ int r1=int(random(60));
 int r2=int(random(60));
 int r3=int(random(60));
 
-boolean red1=true;
-boolean blue1=true;
+boolean hitsp=false;
+boolean hitr=false;
+boolean hitb=false;
 
 void setup(){
   size(640,480);
@@ -54,7 +55,7 @@ void draw(){
     case GAME_RUN:
       background(0);
       ball.balliX();
-      ball.move();
+      ball.mousemove();
       ball.display();
       ball.bounce();
       mybar.display();
@@ -128,24 +129,34 @@ void hitred(){
   bricks[r2].hitbrick();  
   bricks[r3].display(r3,12);
   bricks[r3].hitbrick();
+  barm();
 }
 
 void barp(){
-  if(bricks[b1].behit==true
-  || bricks[b2].behit==true
-  || bricks[b3].behit==true){
-     mybar=new Bar(150);
+   if(bricks[b1].behit==true && bricks[b1].spbehit==false){
+    mybar=new Bar(150);
+    bricks[b1].spbehit=true;
+  }else if(bricks[b2].behit==true && bricks[b2].spbehit==false){
+    mybar=new Bar(150);
+    bricks[r2].spbehit=true;
+  }else if(bricks[b3].behit==true && bricks[b3].spbehit==false){
+    mybar=new Bar(150);
+    bricks[b3].spbehit=true;  
   }
 }
 
 void barm(){
-  if(bricks[r1].behit==true
-  || bricks[r2].behit==true
-  || bricks[r3].behit==true){
-     mybar=new Bar(50);
+  if(bricks[r1].behit==true && bricks[r1].spbehit==false){
+    mybar=new Bar(50);
+    bricks[r1].spbehit=true;
+  }else if(bricks[r2].behit==true && bricks[r2].spbehit==false){
+    mybar=new Bar(50);
+    bricks[r2].spbehit=true;
+  }else if(bricks[r3].behit==true && bricks[r3].spbehit==false){
+    mybar=new Bar(50);
+    bricks[r3].spbehit=true;  
   }
 }
-
 void drawlife(){
   textSize(20);
   text("LIFE:",10,height-30);
